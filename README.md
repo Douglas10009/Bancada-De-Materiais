@@ -6,6 +6,6 @@ Repositório dedicado a junção de matériais/anotações que faço para estuda
 Imagem de <a href="https://pixabay.com/pt/users/geralt-9301/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1307227">Gerd Altmann</a> por <a href="https://pixabay.com/pt/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1307227">Pixabay</a>
 
 ## Indice
-1. [Desenvolvimento Web](/Cod3r_Cursos-DesenvolvimentoWeb)
+1. [Desenvolvimento Web](/DesenvolvimentoWeb)
 
 <sub>Caso seja detentor de qualquer uma das informações, e deseja que seja retirado, favor entrar em contato com meu email: douglasextra2@gmail.com </sub>
