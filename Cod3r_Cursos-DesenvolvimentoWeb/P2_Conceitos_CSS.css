@@ -1,0 +1,27 @@
+body{
+    background-color: black;
+    color: white;
+}
+
+h1{
+    color: yellow;
+}
+
+.teste{
+    color: crimson;
+}
+
+.caixa{ /* Classe encontrada no div no HTML */
+    display: inline-block; /* Para que o elemento seja exibido na mesma linha */
+    height: 100px; /*Define a altura da caixa de 100 pixels*/
+    width: 100px; /*Define a largura da caixa de 100 pixels*/
+    background-color: crimson;
+    color: white;
+    padding: 10px; /*Define o espaço entre o conteúdo e o contorno da caixa*/
+    border: solid 2px white; /*Define o contorno da caixa, com 2 pixels e branca*/
+    margin: 10px; /*Define a margem da caixa de 10 pixels*/
+}
+
+.verde{
+    background-color: forestgreen;
+}

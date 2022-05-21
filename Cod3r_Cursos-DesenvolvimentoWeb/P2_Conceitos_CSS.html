@@ -1,0 +1,90 @@
+- Estruturas
+HTML == <tag atributos></tag>
+
+
+                CSS - Cascading Style Sheets
+
+seletor(Podendo ser igual a um filtro, que escolhe onde as caracteristicas serão aplicadas, menos específico) {
+    comando: caracteristicas;
+}
+
+#seletor (Seletor de id - Um atributo do html - Um atributo mais único){
+    comando: caracteristicas;
+}
+
+.seletor(Seleciona class - Um atributo do html - Um atributo menos único){
+    comando: caracteristicas;
+}
+
+Em caso de sobre sobreposição, o seletor mais específico, ver no site: (specificity.keegan.st)
+
+Exemplo:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="P2_Conceitos_CSS.css">  /Linkar o CSS ao HTML/
+
+    <title>Document</title> /Define o nome da página/
+</head>
+<body>
+
+    <h1 class="teste">Teste</h1>
+    <h1 id="principal">Principal</h1>
+
+    <h2>Subtítulo</h2>
+
+    <div class="caixa">Conteúdo</div>
+    <div class="caixa verde">Conteúdo</div>
+
+</body>
+</html>
+
+
+-----------------------------------------
+
+BOX MODEL - 
+    Define o espaçamento entre os elementos do site
+
+    Padding:
+        Espaçamento entre o conteudo interior, e o conteudo externo
+
+        Podendo se separar em 4:
+            Padding-top:
+                Define o espaçamento do topo
+            Padding-right:
+                Define o espaçamento da direita
+            Padding-bottom:
+                Define o espaçamento do fundo
+            Padding-left:
+                Define o espaçamento da esquerda
+    
+    Margin:
+        Margem do elemento da paddind
+
+        Podendo se separar em 4:
+            Margin-top:
+                Define o espaçamento do topo
+            Margin-right:
+                Define o espaçamento da direita
+            Margin-bottom:
+                Define o espaçamento do fundo
+            Margin-left:
+                Define o espaçamento da esquerda
+        
+        Exemplos:
+        
+        Colocando de uma vez: (Movimentando no sentindo horário)
+        margin: 10px 20px 30px 40px; //Define a margem de todos os lados
+        - margin: superior, direita, inferior, esquerda; 
+
+        Colocando separados:
+        margin-top: 10px; //Define a margem superior
+        margin-right: 20px; //Define a margem da direita
+        margin-bottom: 30px; //Define a margem do fundo
+        margin-left: 40px; //Define a margem da esquerda
+
