@@ -25,3 +25,7 @@ h1{
 .verde{
     background-color: forestgreen;
 }
+
+.conteudo > .caixa{ /* Escolhe especificamente aplicar as configurações no div conteudo com o div caixa (Classificados por class) */
+    background-color: aqua;
+}
