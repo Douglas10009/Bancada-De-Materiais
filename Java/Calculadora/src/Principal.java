@@ -10,11 +10,11 @@ public class Principal {
 		System.out.print("Digite o operando 2: ");
 		double operando2 = sc.nextDouble();
 
-		System.out.println("Digite o operador: [+ para somar, - para subtrair, * para multiplicar, / para dividir]: ");
+		System.out.print("Digite o operador: [+ para somar, - para subtrair, * para multiplicar, / para dividir]: ");
 		String operador = sc.next();
 
 		System.out.print("O resultado é: ");
-		Calculadora c = new Calculadora(0,1, "+");
+		Calculadora c = new Calculadora(operando1, operando2, operador);
 		sc.close();
 	}
 }
