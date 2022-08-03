@@ -23,6 +23,11 @@ public class index {
 
             switch (opcao) {
                 case 1: // Logistica
+                    int opcao_log = 0;
+                    while (opcao_log != 0) {
+                        System.out.println("Escolha uma opção: ");
+
+                    }
                     // Cadastrar novos fornecedores
                     // Cadastrar Clientes
                     // Cadastrar Produtos
