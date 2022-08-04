@@ -5,11 +5,12 @@ public class index {
         Scanner sc = new Scanner(System.in);
         System.out.println("--------------------------------------");
 
-        System.out.println("--> Seja bem vindo a Logistica e CIA :)");
+        System.out.println("----> Seja bem vindo a Logistica e CIA :)");
 
         int opcao = 0;
         while (opcao != 6) {
 
+            System.out.println("\n-- Menu Principal --");
             System.out.println("Escolha uma opção -");
             System.out.println("1- Sistema de logistica");
             System.out.println("2 - Sistema de controle");
@@ -28,7 +29,8 @@ public class index {
 
                     if (contador == 0) {
                         // Runtime.getRuntime().exec("cls"); //Tentativa de limpar a tela
-                        clearScreen();
+                        clearScreen(); //Limpar a tela
+
                         System.out.println("-- Sistema de logistica --");
                         System.out.println("Escolha uma opção -");
                         System.out.println("1 - Cadastrar fornecedor");
@@ -38,25 +40,34 @@ public class index {
 
                         switch (opcao_log) {
                             case 1:
-                                System.out.println("Digite o nome do fornecedor: ");
-                                String nome = sc.nextLine();
-                                System.out.println("Digite o endereço do fornecedor: ");
-                                String endereco = sc.nextLine();
-                                System.out.println("Digite o CNPJ do fornecedor: ");
-                                String cnpj = sc.nextLine();
-                                System.out.println("Digite o telefone do fornecedor: ");
+                                clearScreen(); //Limpar tela
+                                System.out.println("\n-- Sistema de logistica --");
+                                System.out.println("--> Cadastrando o fornecedor");
+
+                                System.out.print("Digite o nome do fornecedor: ");
+                                String nome = sc.next();
+                                //sc.next(); //Para tirar espaço vazio do buffer
+                                System.out.print("Digite o endereço do fornecedor: ");
+                                String endereco = sc.next();
+                                System.out.print("Digite o CNPJ do fornecedor: ");
+                                int cnpj = sc.nextInt();
+                                System.out.print("Digite o telefone do fornecedor: ");
                                 int telefone = sc.nextInt();
 
-                                System.out.println("O nome: " + nome);
-                                System.out.println("Endereço: " + endereco);
-                                System.out.println("CNPJ: " + cnpj);
-                                System.out.println("Telefone: " + telefone);
+                                
+
+                                
+                                System.out.println("\nO nome: " + nome); //Debug
+                                System.out.println("Endereço: " + endereco); // Debug
+                                System.out.println("CNPJ: " + cnpj); // Debug
+                                System.out.println("Telefone: " + telefone); //Debug
+                                System.out.println(" "); //Degub
                                 break;
 
                             default:
                                 break;
                         }
-                        clearScreen(); //Função de limpar a tela
+                        //clearScreen(); //Função de limpar a tela
                     }
                     // Cadastrar novos fornecedores
                     // Cadastrar Clientes
