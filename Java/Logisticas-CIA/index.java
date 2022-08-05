@@ -53,10 +53,11 @@ public class index {
                                 int cnpj = sc.nextInt();
                                 System.out.print("Digite o telefone do fornecedor: ");
                                 int telefone = sc.nextInt();
+                                System.out.print("Digite o código do fornecedor: ");
+                                int cod_fornecedor = sc.nextInt();
 
-                                
-
-                                
+                            
+                                Fornecedores c = new Fornecedores(nome, cnpj, endereco, telefone, cod_fornecedor);
                                 System.out.println("\nO nome: " + nome); //Debug
                                 System.out.println("Endereço: " + endereco); // Debug
                                 System.out.println("CNPJ: " + cnpj); // Debug
