@@ -1,3 +1,4 @@
+import java.util.List;
 import java.util.Scanner;
 
 public class index {
@@ -8,6 +9,7 @@ public class index {
         System.out.println("----> Seja bem vindo a Logistica e CIA :)");
 
         int opcao = 0;
+        List <>
         while (opcao != 6) {
 
             System.out.println("\n-- Menu Principal --");
@@ -29,24 +31,26 @@ public class index {
 
                     if (contador == 0) {
                         // Runtime.getRuntime().exec("cls"); //Tentativa de limpar a tela
-                        clearScreen(); //Limpar a tela
+                        clearScreen(); // Limpar a tela
 
                         System.out.println("-- Sistema de logistica --");
                         System.out.println("Escolha uma opção -");
                         System.out.println("1 - Cadastrar fornecedor");
-                        System.out.println("2 - Voltar");
+                        System.out.println("2 - Excluir fornecedores");
+                        System.out.println("3 - Voltar");
                         System.out.print("Digite o número da sua opção: ");
                         opcao_log = sc.nextInt();
 
+                        boolean cad_Fornecedor = false;
                         switch (opcao_log) {
                             case 1:
-                                clearScreen(); //Limpar tela
+                                clearScreen(); // Limpar tela
                                 System.out.println("\n-- Sistema de logistica --");
                                 System.out.println("--> Cadastrando o fornecedor");
 
                                 System.out.print("Digite o nome do fornecedor: ");
                                 String nome = sc.next();
-                                //sc.next(); //Para tirar espaço vazio do buffer
+                                // sc.next(); //Para tirar espaço vazio do buffer
                                 System.out.print("Digite o endereço do fornecedor: ");
                                 String endereco = sc.next();
                                 System.out.print("Digite o CNPJ do fornecedor: ");
@@ -55,20 +59,38 @@ public class index {
                                 int telefone = sc.nextInt();
                                 System.out.print("Digite o código do fornecedor: ");
                                 int cod_fornecedor = sc.nextInt();
-
-                            
                                 Fornecedores c = new Fornecedores(nome, cnpj, endereco, telefone, cod_fornecedor);
-                                System.out.println("\nO nome: " + nome); //Debug
+                                cad_Fornecedor = true;
+
+
+                                // Adicionar agora o poder exluir fornecedor ou add mais
+                                
+
+                                System.out.println("\nO nome: " + nome); // Debug
                                 System.out.println("Endereço: " + endereco); // Debug
                                 System.out.println("CNPJ: " + cnpj); // Debug
-                                System.out.println("Telefone: " + telefone); //Debug
-                                System.out.println(" "); //Degub
+                                System.out.println("Telefone: " + telefone); // Debug
+                                System.out.println(" "); // Degub
+                                break;
+
+                            case 2:
+                                if (cad_Fornecedor) {
+                                    System.out.println("\n-- Sistema de logistica --");
+                                    System.out.println("--> Excluindo o fornecedor");
+
+
+                                    for (int i = 0; i < 10; i++) { //Mudar isso ak
+                                        System.out.println("");//Aq vai mostrar os cpf ou cnpj ou codigo para excluir o fornecedor
+                                    }
+                                } else {
+                                    System.out.println("Não há fornecedores cadastrados, cadastre um forncecedor");
+                                }
                                 break;
 
                             default:
                                 break;
                         }
-                        //clearScreen(); //Função de limpar a tela
+                        // clearScreen(); //Função de limpar a tela
                     }
                     // Cadastrar novos fornecedores
                     // Cadastrar Clientes
