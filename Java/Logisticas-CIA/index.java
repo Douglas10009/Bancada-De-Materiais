@@ -5,6 +5,8 @@ import java.util.Scanner;
 public class index {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+
+        clearScreen(); //Limpar a tela
         System.out.println("--------------------------------------");
 
         System.out.println("----> Seja bem vindo a Logistica e CIA :)");
@@ -37,6 +39,7 @@ public class index {
                         clearScreen(); // Limpar a tela
 
                         System.out.println("-- Sistema de logistica --");
+                        System.out.println("> Fornecedores ");
                         System.out.println("Escolha uma opção -");
                         System.out.println("1 - Cadastrar fornecedor");
                         System.out.println("2 - Excluir fornecedores");
@@ -72,11 +75,12 @@ public class index {
                                 System.out.println("Endereço: " + endereco); // Debug
                                 System.out.println("CNPJ: " + cnpj); // Debug
                                 System.out.println("Telefone: " + telefone); // Debug
+                                System.out.println("Código do fornecedor: " + cod_fornecedor); //Debug
                                 System.out.println(" "); // Degub
                                 break;
 
                             case 2:
-                                if (cad_Fornecedor) {
+                                if (cad_Fornecedor == true) {
                                     System.out.println("\n-- Sistema de logistica --");
                                     System.out.println("--> Excluindo o fornecedor");
 
@@ -111,7 +115,7 @@ public class index {
                                     }
 
                                 } else {
-                                    System.out.println("Não há fornecedores cadastrados, cadastre um forncecedor");
+                                    System.out.println("\n----------> Não há fornecedores cadastrados, cadastre um forncecedor"); //ALERT
                                 }
                                 break;
 
