@@ -65,9 +65,9 @@ public class index {
                                 int telefone = sc.nextInt();
                                 System.out.print("Digite o código do fornecedor: ");
                                 int cod_fornecedor = sc.nextInt();
-                                Fornecedores c = new Fornecedores(nome, cnpj, endereco, telefone, cod_fornecedor);
+                                Fornecedores c = new Fornecedores(nome, cnpj, endereco, telefone, cod_fornecedor); //
                                 list_forn.add(c);
-                                cad_Fornecedor = true;
+                                cad_Fornecedor = true; //Não ta funcionando, diz que não há fornecedores criados ERROR
 
                                 // Adicionar agora o poder exluir fornecedor ou add mais
 
