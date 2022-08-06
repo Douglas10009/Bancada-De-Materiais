@@ -10,7 +10,7 @@ public class Principal {
 		System.out.println("Digite seu nome: ");
 		String nome = sc.next();
 		
-		System.out.println("Digite seu endere�o: ");
+		System.out.println("Digite seu endereço: ");
 		String endereco = sc.next();
 		
 		Funcionario func1 = new Funcionario(nome,endereco);
