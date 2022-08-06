@@ -4,13 +4,13 @@ import java.util.Scanner;
 
 public class Principal {
 	public static void main(String[] args) {
-		Funcionario func = new Funcionario(); //Segundo funcionário é um contrutor
+		Funcionario func = new Funcionario(); //Segundo funcionï¿½rio ï¿½ um contrutor
 		Scanner sc = new Scanner(System.in);
 		//List<Cliente> = new ArrayList<Cliente>();
 		System.out.println("Digite seu nome: ");
 		String nome = sc.next();
 		
-		System.out.println("Digite seu endereço: ");
+		System.out.println("Digite seu endereï¿½o: ");
 		String endereco = sc.next();
 		
 		Funcionario func1 = new Funcionario(nome,endereco);
