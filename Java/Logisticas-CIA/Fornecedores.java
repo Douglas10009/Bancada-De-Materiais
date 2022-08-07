@@ -54,4 +54,6 @@ public class Fornecedores  {
         this.telefone = telefone;
         this.cod_fornecedor = cod_fornecedor;
     }
+
+    public Fornecedores(){}
 }

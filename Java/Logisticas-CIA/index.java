@@ -37,6 +37,8 @@ public class index {
 
                     clear(); // Limpar a tela
 
+                    Fornecedores forn = new Fornecedores(); 
+                    boolean cad_Fornecedor = false;
                     while (opcao_log != 3) {
                         System.out.println("-- Sistema de logistica --");
                         System.out.println("> Fornecedores ");
@@ -46,7 +48,6 @@ public class index {
                         System.out.println("3 - Voltar");
                         System.out.print("Digite o número da sua opção: ");
                         opcao_log = sc.nextInt();
-                        boolean cad_Fornecedor = false;
 
                         switch (opcao_log) {
                             case 1:
@@ -65,22 +66,24 @@ public class index {
                                 int telefone = sc.nextInt();
                                 System.out.print("Digite o código do fornecedor: ");
                                 int cod_fornecedor = sc.nextInt();
-                                Fornecedores c = new Fornecedores(nome, cnpj, endereco, telefone, cod_fornecedor); //
-                                list_forn.add(c);
+                                forn = new Fornecedores(nome, cnpj, endereco, telefone, cod_fornecedor);
+                                list_forn.add(forn);
                                 cad_Fornecedor = true; // Não ta funcionando, diz que não há fornecedores criados
                                                        // ERROR
 
                                 // Adicionar agora o poder exluir fornecedor ou add mais
 
-                                System.out.println("\nO nome: " + nome); // Debug
-                                System.out.println("Endereço: " + endereco); // Debug
-                                System.out.println("CNPJ: " + cnpj); // Debug
-                                System.out.println("Telefone: " + telefone); // Debug
-                                System.out.println("Código do fornecedor: " + cod_fornecedor); // Debug
+                                System.out.println("\nO nome: " + forn.getNome()); // Debug
+                                System.out.println("Endereço: " + forn.getEndereco()); // Debug
+                                System.out.println("CNPJ: " + forn.getCnpj()); // Debug
+                                System.out.println("Telefone: " + forn.getTelefone()); // Debug
+                                System.out.println("Código do fornecedor: " + forn.getCod_fornecedor()); // Debug
+                                System.out.println("Cadastro fornecedor: " + cad_Fornecedor);
                                 System.out.println(" "); // Degub
                                 break;
 
                             case 2:
+                                System.out.println(cad_Fornecedor); //debug
                                 if (cad_Fornecedor == true) {
                                     System.out.println("\n-- Sistema de logistica --");
                                     System.out.println("--> Excluindo o fornecedor");
@@ -91,8 +94,8 @@ public class index {
 
                                     switch (excluir_opc) {
                                         case 1:// CNPJ
-                                            for (int i = 0; i < list_forn.size(); i++) { // Mudar isso ak
-                                                //System.out.println(list_forn.get(c.getCnpj()));// Aq vai mostrar os cpf para excluir o
+                                            for (int i = 0; i < list_forn.size(); i++) { 
+                                                System.out.println(list_forn.get(forn.getCnpj()));// Aq vai mostrar os cpf para excluir o
                                                                        // fornecedor
                                             }
                                             break;
@@ -109,7 +112,7 @@ public class index {
 
                                 } else {
                                     System.out.println(
-                                            "\n----------> Não há fornecedores cadastrados, cadastre um forncecedor"); // ALERT
+                                            "\n----------> Não há fornecedores cadastrados, cadastre um forncecedor\n"); // ALERT
                                 }
                                 break;
 
