@@ -68,7 +68,7 @@ public class index {
                                 int cod_fornecedor = sc.nextInt();
                                 forn = new Fornecedores(nome, cnpj, endereco, telefone, cod_fornecedor);
                                 list_forn.add(forn);
-                                cad_Fornecedor = true; // Não ta funcionando, diz que não há fornecedores criados
+                                cad_Fornecedor = true; // Não ta funcionando, diz que não há fornecedores criados (Consertado)
                                                        // ERROR
 
                                 // Adicionar agora o poder exluir fornecedor ou add mais
@@ -92,7 +92,7 @@ public class index {
                                     System.out.print("Escolha dentre as alternativas para selecionar o método de exclusão: ");
                                     int excluir_opc = sc.nextInt();
 
-                                    switch (excluir_opc) {
+                                    switch (excluir_opc) { //tá dando erro ERROR
                                         case 1:// CNPJ
                                             for (int i = 0; i < list_forn.size(); i++) { 
                                                 System.out.println(list_forn.get(forn.getCnpj()));// Aq vai mostrar os cpf para excluir o
