@@ -1,15 +1,16 @@
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class index {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, InterruptedException {
         Scanner sc = new Scanner(System.in);
 
-        clearScreen(); //Limpar a tela
+        clear(); // Limpar a tela
         System.out.println("--------------------------------------");
 
-        System.out.println("----> Seja bem vindo a Logistica e CIA :)");
+        System.out.println("\n----> Seja bem vindo a Logistica e CIA :)");
 
         int opcao = 0;
         ArrayList<Fornecedores> list_forn = new ArrayList<Fornecedores>();
@@ -34,10 +35,9 @@ public class index {
                     int opcao_log = 0;
                     int contador = 0; // Para saber se é a primeira vez que o usuário entra no menu
 
-                    if (contador == 0) {
-                        // Runtime.getRuntime().exec("cls"); //Tentativa de limpar a tela
-                        clearScreen(); // Limpar a tela
+                    clear(); // Limpar a tela
 
+                    while (opcao_log != 3) {
                         System.out.println("-- Sistema de logistica --");
                         System.out.println("> Fornecedores ");
                         System.out.println("Escolha uma opção -");
@@ -46,11 +46,11 @@ public class index {
                         System.out.println("3 - Voltar");
                         System.out.print("Digite o número da sua opção: ");
                         opcao_log = sc.nextInt();
-
                         boolean cad_Fornecedor = false;
+
                         switch (opcao_log) {
                             case 1:
-                                clearScreen(); // Limpar tela
+                                clear(); // Limpar tela
                                 System.out.println("\n-- Sistema de logistica --");
                                 System.out.println("--> Cadastrando o fornecedor");
 
@@ -67,7 +67,8 @@ public class index {
                                 int cod_fornecedor = sc.nextInt();
                                 Fornecedores c = new Fornecedores(nome, cnpj, endereco, telefone, cod_fornecedor); //
                                 list_forn.add(c);
-                                cad_Fornecedor = true; //Não ta funcionando, diz que não há fornecedores criados ERROR
+                                cad_Fornecedor = true; // Não ta funcionando, diz que não há fornecedores criados
+                                                       // ERROR
 
                                 // Adicionar agora o poder exluir fornecedor ou add mais
 
@@ -75,7 +76,7 @@ public class index {
                                 System.out.println("Endereço: " + endereco); // Debug
                                 System.out.println("CNPJ: " + cnpj); // Debug
                                 System.out.println("Telefone: " + telefone); // Debug
-                                System.out.println("Código do fornecedor: " + cod_fornecedor); //Debug
+                                System.out.println("Código do fornecedor: " + cod_fornecedor); // Debug
                                 System.out.println(" "); // Degub
                                 break;
 
@@ -83,31 +84,23 @@ public class index {
                                 if (cad_Fornecedor == true) {
                                     System.out.println("\n-- Sistema de logistica --");
                                     System.out.println("--> Excluindo o fornecedor");
-
-                                    System.out.println("1 - CPF");
-                                    System.out.println("2 - CNPJ");
-                                    System.out.println("3 - Código do cliente");
-
-                                    System.out.print(
-                                            "Escolha dentre as alternativas para selecionar o método de exclusão: ");
+                                    System.out.println("1 - CNPJ");
+                                    System.out.println("2 - Código do fornecedor");
+                                    System.out.print("Escolha dentre as alternativas para selecionar o método de exclusão: ");
                                     int excluir_opc = sc.nextInt();
 
                                     switch (excluir_opc) {
-                                        case 1://CPF
+                                        case 1:// CNPJ
+                                            for (int i = 0; i < list_forn.size(); i++) { // Mudar isso ak
+                                                //System.out.println(list_forn.get(c.getCnpj()));// Aq vai mostrar os cpf para excluir o
+                                                                       // fornecedor
+                                            }
+                                            break;
+                
+                                        case 2: //Código do fornecedor
                                             for (int i = 0; i < 10; i++) { // Mudar isso ak
-                                                System.out.println("");// Aq vai mostrar os cpf para excluir o fornecedor
-                                            }
-                                            break;
-
-                                        case 2://CNPJ
-                                            for (int i = 0; i < 10; i++) { //Mudar isso ak
-                                                System.out.println("");//Aq vai mostrar o cnpj para excluir o fornecedor
-                                            }
-                                            break;
-                                        
-                                        case 3:
-                                            for (int i = 0; i < 10; i++) { //Mudar isso ak
-                                                System.out.println("");//Aq vai mostrar o codigo para excluir o fornecedor
+                                                System.out.println("");// Aq vai mostrar o codigo para excluir o
+                                                                       // fornecedor
                                             }
                                             break;
                                         default:
@@ -115,15 +108,17 @@ public class index {
                                     }
 
                                 } else {
-                                    System.out.println("\n----------> Não há fornecedores cadastrados, cadastre um forncecedor"); //ALERT
+                                    System.out.println(
+                                            "\n----------> Não há fornecedores cadastrados, cadastre um forncecedor"); // ALERT
                                 }
                                 break;
 
                             default:
                                 break;
                         }
-                        // clearScreen(); //Função de limpar a tela
                     }
+                    // clearScreen(); //Função de limpar a tela
+
                     // Cadastrar novos fornecedores
                     // Cadastrar Clientes
                     // Cadastrar Produtos
@@ -152,10 +147,18 @@ public class index {
 
     }
 
-    public static void clearScreen() {
+    public static void clearScreen() { // Método para limpar a tela
         char esc = 27;
         String clear = esc + "[2J"; // codigo ansi para limpar a tela
         System.out.print(clear);
+    }
+
+    public static void clear() throws IOException, InterruptedException { // Método 2 para limpar a tela
+        // Limpa a tela no windows, no linux e no MacOS
+        if (System.getProperty("os.name").contains("Windows"))
+            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+        else
+            Runtime.getRuntime().exec("clear");
     }
 }
 
