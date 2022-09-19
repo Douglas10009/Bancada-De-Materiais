@@ -9,13 +9,13 @@ public class Principal {
 		g.cadastrar();
 		g.excluir();
 		
-		Ifuncionario func = new Gerente();
+		iFuncionario func = new gerente();
 		
-		if(func instanceof Gerente){
+		if(func instanceof gerente){
 			func.salvar();
 			func.alterar();
-			func.excluir()
-		}else if (func. instanceof Diretor){
+			func.excluir();
+		}else if (func instanceof Diretor){
 			func.excluir();
 		}
 
